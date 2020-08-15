@@ -23,3 +23,5 @@ Or, it can be specified as part of the `docker run` command line:
 ```bash
 docker run -d --label=com.centurylinklabs.watchtower.enable=true someimage
 ```
+
+If watchtower is monitoring the same Docker daemon under which the watchtower container itself is running (i.e. if you volume-mounted _/var/run/docker.sock_ into the watchtower container) then it has the ability to update itself. If a new version of the _containrrr/watchtower_ image is pushed to the Docker Hub, your watchtower will pull down the new image and restart itself automatically.
